@@ -1,9 +1,5 @@
 
-/* ==============================
-   CM REAL ESTATE WEBSITE
-   ============================== */
 
-/* General styling */
 
 * {
     margin: 0;
@@ -26,7 +22,6 @@ body {
     --white: #ffffff;
 }
 
-/* Navigation bar */
 
 .navbar {
     background-color: var(--dark-green);
@@ -98,7 +93,7 @@ body {
     line-height: 1.6;
 }
 
-/* Gold buttons */
+
 
 .btn-gold {
     background-color: var(--gold);
@@ -116,7 +111,7 @@ body {
     color: white;
 }
 
-/* Section headings */
+
 
 .section-title {
     text-align: center;
@@ -142,7 +137,7 @@ body {
     color: var(--gold);
 }
 
-/* Feature cards */
+
 
 .feature-card {
     background-color: white;
@@ -160,8 +155,6 @@ body {
     transform: translateY(-5px);
 }
 
-/* Service cards */
-
 .service-card {
     border: none;
     border-radius: 8px;
@@ -177,15 +170,13 @@ body {
     margin-bottom: 15px;
 }
 
-/* About page */
+
 
 .container h2 {
     color: var(--green);
     font-weight: bold;
     margin-bottom: 20px;
 }
-
-/* Contact page */
 
 .contact-box {
     background-color: white;
@@ -204,7 +195,7 @@ body {
     box-shadow: 0 0 5px rgba(217,165,44,0.4);
 }
 
-/* Footer */
+
 
 footer {
     background-color: var(--dark-green);
@@ -218,7 +209,6 @@ footer p {
     margin: 5px;
 }
 
-/* Responsive design */
 
 @media screen and (max-width: 768px) {
 
