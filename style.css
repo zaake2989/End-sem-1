@@ -9,231 +9,227 @@
 
 body {
     font-family: Arial, sans-serif;
-    background-color: #f5f5f2;
-    color: #222;
+    background-color: #f4f5f0;
 }
 
-/* Brand colours */
 
-:root {
-    --green: #064b36;
-    --dark-green: #023324;
-    --gold: #d9a52c;
-    --white: #ffffff;
-}
-
+/* NAVIGATION BAR */
 
 .navbar {
-    background-color: var(--dark-green);
-    padding: 18px 0;
+    background-color: #003b2e;
+    padding: 15px 0;
 }
 
 .navbar-brand {
-    font-size: 25px;
-    color: var(--white) !important;
-}
-
-.gold {
-    color: var(--gold);
+    color: #e5b52f !important;
+    font-size: 23px;
+    font-weight: bold;
 }
 
 .nav-link {
-    color: var(--white) !important;
+    color: white !important;
     margin-left: 15px;
-    font-weight: 600;
-    transition: 0.3s;
+    font-weight: 500;
 }
 
 .nav-link:hover,
 .nav-link.active {
-    color: var(--gold) !important;
+    color: #e5b52f !important;
 }
 
-/* Home page background */
+
+/* HOME SECTION */
 
 .hero {
-    min-height: 550px;
+    min-height: 500px;
+    position: relative;
 
-    background:
-        linear-gradient(
-            rgba(0, 35, 24, 0.55),
-            rgba(0, 35, 24, 0.55)
-        ),
-        url("../images/bungalow.jpg");
+    display: flex;
+    align-items: center;
+
+    background-color: #003b2e;
+    overflow: hidden;
+}
+
+
+/* BUNGALOW WATERMARK */
+
+.hero::before {
+    content: "";
+
+    position: absolute;
+    inset: 0;
+
+    background-image: url("images/bungalow.jpg");
 
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
 
-    display: flex;
-    align-items: center;
+    opacity: 0.20;
 
-    padding: 60px 8%;
+    z-index: 0;
 }
+
+
+/* DARK OVERLAY */
+
+.hero::after {
+    content: "";
+
+    position: absolute;
+    inset: 0;
+
+    background-color: rgba(0, 35, 25, 0.50);
+
+    z-index: 1;
+}
+
+
+/* HERO CONTENT */
 
 .hero-content {
+    position: relative;
+    z-index: 2;
+
     color: white;
-    max-width: 650px;
+    padding-top: 80px;
+    padding-bottom: 80px;
 }
 
-.hero-content h1 {
-    font-size: 48px;
+.hero h1 {
+    font-size: 38px;
     font-weight: bold;
     margin-bottom: 15px;
 }
 
-.hero-content h2 {
-    font-size: 25px;
+.hero h1 span {
+    color: #e5b52f;
+}
+
+.hero h3 {
+    font-size: 22px;
     margin-bottom: 15px;
 }
 
-.hero-content p {
-    font-size: 18px;
+.hero p {
+    max-width: 600px;
+    font-size: 16px;
+    line-height: 1.7;
     margin-bottom: 25px;
+}
+
+
+/* BUTTONS */
+
+.btn-warning {
+    background-color: #e5b52f;
+    border: none;
+    color: #003b2e;
+    font-weight: bold;
+    padding: 12px 22px;
+}
+
+.btn-warning:hover {
+    background-color: #c99b20;
+    color: white;
+}
+
+.btn-outline-light {
+    padding: 12px 22px;
+    margin-left: 8px;
+}
+
+
+/* WHY CHOOSE US */
+
+.why-us {
+    padding: 60px 0;
+    text-align: center;
+    background-color: #f4f5f0;
+}
+
+.why-us h2 {
+    color: #004735;
+    font-size: 28px;
+    font-weight: bold;
+    margin-bottom: 30px;
+}
+
+.feature-card {
+    background-color: white;
+    padding: 30px 20px;
+
+    min-height: 180px;
+
+    border-radius: 8px;
+
+    border-bottom: 4px solid #e5b52f;
+
+    box-shadow: 0 3px 12px rgba(0,0,0,0.08);
+
+    transition: transform 0.3s;
+}
+
+.feature-card:hover {
+    transform: translateY(-5px);
+}
+
+.feature-card h4 {
+    color: #003b2e;
+    font-size: 20px;
+    margin-bottom: 15px;
+}
+
+.feature-card p {
+    color: #555;
     line-height: 1.6;
 }
 
 
-
-.btn-gold {
-    background-color: var(--gold);
-    color: #17251c;
-    border: 2px solid var(--gold);
-    padding: 11px 25px;
-    font-weight: bold;
-    border-radius: 5px;
-    transition: 0.3s;
-}
-
-.btn-gold:hover {
-    background-color: #b98a20;
-    border-color: #b98a20;
-    color: white;
-}
-
-
-
-.section-title {
-    text-align: center;
-    color: var(--green);
-    font-weight: bold;
-    margin-bottom: 35px;
-}
-
-.page-heading {
-    background-color: var(--green);
-    color: white;
-    text-align: center;
-    padding: 55px 15px;
-}
-
-.page-heading h1 {
-    font-size: 38px;
-    font-weight: bold;
-}
-
-.page-heading p {
-    font-size: 18px;
-    color: var(--gold);
-}
-
-
-
-.feature-card {
-    background-color: white;
-    border: none;
-    border-bottom: 4px solid var(--gold);
-    border-radius: 8px;
-    padding: 15px;
-    height: 100%;
-    box-shadow: 0 3px 12px rgba(0,0,0,0.08);
-    transition: 0.3s;
-}
-
-.feature-card:hover,
-.service-card:hover {
-    transform: translateY(-5px);
-}
-
-.service-card {
-    border: none;
-    border-radius: 8px;
-    border-bottom: 4px solid var(--gold);
-    box-shadow: 0 3px 12px rgba(0,0,0,0.08);
-    transition: 0.3s;
-}
-
-.service-card h3 {
-    color: var(--green);
-    font-size: 21px;
-    font-weight: bold;
-    margin-bottom: 15px;
-}
-
-
-
-.container h2 {
-    color: var(--green);
-    font-weight: bold;
-    margin-bottom: 20px;
-}
-
-.contact-box {
-    background-color: white;
-    padding: 25px;
-    border-radius: 8px;
-    box-shadow: 0 3px 12px rgba(0,0,0,0.08);
-}
-
-.form-control {
-    padding: 12px;
-    border-radius: 5px;
-}
-
-.form-control:focus {
-    border-color: var(--gold);
-    box-shadow: 0 0 5px rgba(217,165,44,0.4);
-}
-
-
+/* FOOTER */
 
 footer {
-    background-color: var(--dark-green);
+    background-color: #003b2e;
     color: white;
+
     text-align: center;
+
     padding: 25px 10px;
-    margin-top: 20px;
 }
 
 footer p {
     margin: 5px;
+    font-size: 14px;
 }
 
 
-@media screen and (max-width: 768px) {
+/* MOBILE RESPONSIVENESS */
+
+@media (max-width: 768px) {
 
     .hero {
         min-height: 450px;
-        padding: 40px 6%;
     }
 
-    .hero-content h1 {
-        font-size: 34px;
+    .hero h1 {
+        font-size: 29px;
     }
 
-    .hero-content h2 {
-        font-size: 21px;
+    .hero h3 {
+        font-size: 18px;
     }
 
-    .hero-content p {
-        font-size: 16px;
+    .hero p {
+        font-size: 14px;
     }
 
-    .page-heading h1 {
-        font-size: 30px;
+    .hero-content {
+        padding: 60px 20px;
     }
 
-    .navbar-brand {
-        font-size: 21px;
+    .feature-card {
+        margin-bottom: 10px;
     }
+
 }
