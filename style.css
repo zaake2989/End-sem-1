@@ -1,235 +1,446 @@
 
 
-
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+:root {
+    --primary-color: #142b25;
+    --gold-color: #c5a059;
+    --light-color: #f8f8f6;
 }
+
+/* General styling */
 
 body {
+    margin: 0;
+    padding: 0;
     font-family: Arial, sans-serif;
-    background-color: #f4f5f0;
+    background-color: var(--light-color);
+    color: #222;
 }
 
 
-/* NAVIGATION BAR */
-
-.navbar {
-    background-color: #003b2e;
-    padding: 15px 0;
+.main-navbar {
+    background-color: var(--primary-color);
+    padding: 18px 0;
 }
 
 .navbar-brand {
-    color: #e5b52f !important;
     font-size: 23px;
     font-weight: bold;
+    letter-spacing: 1px;
+    color: white;
 }
 
-.nav-link {
-    color: white !important;
-    margin-left: 15px;
-    font-weight: 500;
+.navbar-brand span {
+    color: var(--gold-color);
 }
 
-.nav-link:hover,
-.nav-link.active {
-    color: #e5b52f !important;
+.brand-location {
+    display: block;
+    font-size: 10px;
+    letter-spacing: 5px;
+    color: var(--gold-color);
+    text-align: center;
+}
+
+.navbar-nav .nav-link {
+    color: white;
+    margin: 0 10px;
+    transition: 0.3s;
+}
+
+.navbar-nav .nav-link:hover,
+.navbar-nav .nav-link.active {
+    color: var(--gold-color);
 }
 
 
-/* HOME SECTION */
 
-.hero {
-    min-height: 500px;
-    position: relative;
-
-    display: flex;
-    align-items: center;
-
-    background-color: #003b2e;
-    overflow: hidden;
+.gold-btn {
+    background-color: var(--gold-color);
+    color: #142b25;
+    border: none;
+    padding: 12px 25px;
+    font-weight: bold;
+    border-radius: 4px;
 }
 
+.gold-btn:hover {
+    background-color: white;
+    color: var(--primary-color);
+}
 
-/* BUNGALOW WATERMARK */
+/* =================================
+   HERO SECTION
+================================= */
 
-.hero::before {
-    content: "";
-
-    position: absolute;
-    inset: 0;
-
-    background-image: url("our.jpg");
+.hero-section {
+    background-image:
+        linear-gradient(rgba(0,0,0,0.55),
+        rgba(0,0,0,0.55)),
+        url("pic.jpg");
 
     background-size: cover;
     background-position: center;
-    background-repeat: no-repeat;
-
-    opacity: 0.20;
-
-    z-index: 0;
+    min-height: 550px;
 }
 
-
-/* DARK OVERLAY */
-
-.hero::after {
-    content: "";
-
-    position: absolute;
-    inset: 0;
-
-    background-color: rgba(0, 35, 25, 0.50);
-
-    z-index: 1;
+.hero-overlay {
+    min-height: 550px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
+.hero-subtitle {
+    color: var(--gold-color);
+    font-weight: bold;
+    letter-spacing: 3px;
+    margin-bottom: 20px;
+}
 
-/* HERO CONTENT */
-
-.hero-content {
-    position: relative;
-    z-index: 2;
-
+.hero-section h1 {
     color: white;
-    padding-top: 80px;
-    padding-bottom: 80px;
-}
-
-.hero h1 {
-    font-size: 38px;
+    font-size: 55px;
     font-weight: bold;
-    margin-bottom: 15px;
+    margin-bottom: 20px;
 }
 
-.hero h1 span {
-    color: #e5b52f;
+.hero-section h1 span {
+    color: var(--gold-color);
 }
 
-.hero h3 {
-    font-size: 22px;
-    margin-bottom: 15px;
-}
-
-.hero p {
-    max-width: 600px;
-    font-size: 16px;
-    line-height: 1.7;
-    margin-bottom: 25px;
-}
-
-
-/* BUTTONS */
-
-.btn-warning {
-    background-color: #e5b52f;
-    border: none;
-    color: #003b2e;
-    font-weight: bold;
-    padding: 12px 22px;
-}
-
-.btn-warning:hover {
-    background-color: #c99b20;
+.hero-description {
     color: white;
-}
-
-.btn-outline-light {
-    padding: 12px 22px;
-    margin-left: 8px;
-}
-
-
-/* WHY CHOOSE US */
-
-.why-us {
-    padding: 60px 0;
-    text-align: center;
-    background-color: #f4f5f0;
-}
-
-.why-us h2 {
-    color: #004735;
-    font-size: 28px;
-    font-weight: bold;
+    font-size: 18px;
     margin-bottom: 30px;
 }
 
-.feature-card {
-    background-color: white;
-    padding: 30px 20px;
 
-    min-height: 180px;
-
-    border-radius: 8px;
-
-    border-bottom: 4px solid #e5b52f;
-
-    box-shadow: 0 3px 12px rgba(0,0,0,0.08);
-
-    transition: transform 0.3s;
 }
 
-.feature-card:hover {
-    transform: translateY(-5px);
-}
-
-.feature-card h4 {
-    color: #003b2e;
-    font-size: 20px;
-    margin-bottom: 15px;
-}
-
-.feature-card p {
-    color: #555;
-    line-height: 1.6;
-}
-
-
-/* FOOTER */
-
-footer {
-    background-color: #003b2e;
-    color: white;
-
-    text-align: center;
-
-    padding: 25px 10px;
-}
-
-footer p {
-    margin: 5px;
-    font-size: 14px;
-}
-
-
-/* MOBILE RESPONSIVENESS */
+/* =================================
+   MOBILE RESPONSIVENESS
+================================= */
 
 @media (max-width: 768px) {
 
-    .hero {
+    .hero-section h1 {
+        font-size: 35px;
+    }
+
+    .hero-description {
+        font-size: 15px;
+    }
+
+    .hero-section,
+    .hero-overlay {
         min-height: 450px;
     }
 
-    .hero h1 {
-        font-size: 29px;
+    .search-box {
+        padding: 20px;
     }
 
-    .hero h3 {
-        font-size: 18px;
+}
+
+/* =================================
+   FEATURED PROPERTIES
+================================= */
+
+.featured-properties {
+    padding: 70px 0;
+    background-color: #f8f8f6;
+}
+
+/* Section heading */
+
+.section-heading {
+    margin-bottom: 45px;
+}
+
+.section-subtitle {
+    color: #c5a059;
+    font-weight: bold;
+    letter-spacing: 3px;
+    font-size: 13px;
+}
+
+.section-heading h2 {
+    color: #142b25;
+    font-size: 36px;
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+.section-heading p {
+    color: #666;
+}
+
+/* Property cards */
+
+.property-card {
+    border: none;
+    border-radius: 10px;
+    overflow: hidden;
+    background-color: white;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+    transition: transform 0.3s;
+    height: 100%;
+}
+
+.property-card:hover {
+    transform: translateY(-8px);
+}
+
+.property-card img {
+    height: 240px;
+    object-fit: cover;
+}
+
+/* Property status */
+
+.property-status {
+    display: inline-block;
+    background-color: #142b25;
+    color: white;
+    padding: 7px 15px;
+    font-size: 11px;
+    font-weight: bold;
+    border-radius: 3px;
+}
+
+.rent-status {
+    background-color: #c5a059;
+    color: #142b25;
+}
+
+/* Property information */
+
+.property-card .card-title {
+    color: #142b25;
+    font-weight: bold;
+}
+
+.property-location {
+    color: #777;
+    font-size: 14px;
+}
+
+.property-price {
+    color: #c5a059;
+    font-weight: bold;
+    font-size: 18px;
+}
+
+/* Bedrooms and bathrooms */
+
+.property-details {
+    display: flex;
+    justify-content: space-between;
+    color: #555;
+    font-size: 13px;
+    margin-bottom: 20px;
+}
+
+/* View property button */
+
+.property-btn {
+    background-color: #142b25;
+    color: white;
+    width: 100%;
+    padding: 11px;
+    border-radius: 4px;
+}
+
+.property-btn:hover {
+    background-color: #c5a059;
+    color: #142b25;
+}
+
+/* =================================
+   PROPERTY DETAILS PAGE
+================================= */
+
+.property-details-page {
+    padding: 70px 0;
+    background-color: #f8f8f6;
+}
+
+.details-subtitle {
+    color: #c5a059;
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+
+.property-details-page h1 {
+    color: #142b25;
+    font-size: 38px;
+    font-weight: bold;
+}
+
+.details-image {
+    width: 100%;
+    height: 480px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.details-price-box {
+    background-color: white;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+}
+
+.details-price-box h2 {
+    color: #c5a059;
+    font-size: 25px;
+    font-weight: bold;
+    margin-top: 20px;
+}
+
+.details-price-box p {
+    margin: 15px 0;
+    color: #555;
+}
+
+.property-details-page h3 {
+    color: #142b25;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.property-details-page p {
+    line-height: 1.8;
+}
+
+.feature-list li {
+    margin-bottom: 12px;
+    color: #555;
+}
+
+@media (max-width: 768px) {
+
+    .details-image {
+        height: 280px;
     }
 
-    .hero p {
-        font-size: 14px;
+    .property-details-page h1 {
+        font-size: 30px;
     }
 
-    .hero-content {
-        padding: 60px 20px;
+}
+
+/* SERVICES HERO */
+.services-hero {
+    background: linear-gradient(rgba(20, 43, 37, 0.8),
+                rgba(20, 43, 37, 0.8)),
+                url("our.jpg");
+    background-size: cover;
+    background-position: center;
+    padding: 100px 20px;
+    color: white;
+}
+
+.services-hero h1 {
+    font-size: 42px;
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+.services-hero p {
+    font-size: 18px;
+}
+
+/* SERVICES INTRODUCTION */
+.services-intro h2 {
+    color: #142b25;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.services-intro p {
+    max-width: 750px;
+    margin: auto;
+    color: #666;
+    line-height: 1.8;
+}
+
+/* SERVICE CARDS */
+.service-card {
+    background: white;
+    padding: 35px 25px;
+    text-align: center;
+    height: 100%;
+    border-radius: 10px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+    transition: 0.3s;
+}
+
+.service-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+}
+
+.service-icon {
+    font-size: 45px;
+    color: #c5a059;
+    margin-bottom: 20px;
+}
+
+.service-card h4 {
+    color: #142b25;
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+.service-card p {
+    color: #666;
+    line-height: 1.7;
+}
+
+/* CALL TO ACTION */
+.services-cta {
+    background-color: #142b25;
+    color: white;
+    padding: 65px 20px;
+}
+
+.services-cta h2 {
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+.services-cta p {
+    margin-bottom: 25px;
+}
+
+.btn-gold {
+    background-color: #c5a059;
+    color: white;
+    padding: 12px 30px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.btn-gold:hover {
+    background-color: #ad8745;
+    color: white;
+}
+
+/* MOBILE RESPONSIVENESS */
+@media (max-width: 768px) {
+
+    .services-hero {
+        padding: 70px 15px;
     }
 
-    .feature-card {
-        margin-bottom: 10px;
+    .services-hero h1 {
+        font-size: 30px;
+    }
+
+    .service-card {
+        padding: 25px 20px;
     }
 
 }
